@@ -26,7 +26,8 @@ namespace DISH
             // can of course use your own custom icon too.
             trayIcon = new NotifyIcon();
             trayIcon.Text = "MyTrayApp";
-            trayIcon.Icon = new Icon(SystemIcons.Application, 40, 40);
+
+            trayIcon.Icon = new Icon("Resources/pepper-icon.ico");
 
             // Add menu to tray icon and show it.
             trayIcon.ContextMenu = trayMenu;
