@@ -18,8 +18,7 @@ namespace DISH
         public DISH()
         {
             // Create a simple tray menu with only one item.
-            trayMenu = new ContextMenu();
-            trayMenu.MenuItems.Add("Exit", OnExit);
+            createMenu();
 
             // Create a tray icon. In this example we use a
             // standard system icon for simplicity, but you
@@ -56,6 +55,21 @@ namespace DISH
             }
 
             base.Dispose(isDisposing);
+        }
+
+        private void createMenu()
+        {
+            trayMenu = new ContextMenu();
+            trayMenu.MenuItems.Add("URL", OnExit);
+            trayMenu.MenuItems.Add("HOSTS FILE HERE", OnExit);
+            trayMenu.MenuItems.Add("Make Spice Admin", OnExit);
+            trayMenu.MenuItems.Add("View Production Log", OnExit);
+            trayMenu.MenuItems.Add("Hosts File", OnExit);
+            trayMenu.MenuItems.Add("Message", OnExit);
+            trayMenu.MenuItems.Add("RELEASE DATA", OnExit);
+            trayMenu.MenuItems.Add("Release", OnExit);
+            trayMenu.MenuItems.Add("Settings", OnExit);
+            trayMenu.MenuItems.Add("Quit", OnExit);
         }
     }
 }
