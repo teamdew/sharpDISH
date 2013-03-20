@@ -60,13 +60,31 @@ namespace DISH
         private void createMenu()
         {
             trayMenu = new ContextMenu();
-            trayMenu.MenuItems.Add("URL", OnExit);
-            trayMenu.MenuItems.Add("HOSTS FILE HERE", OnExit);
+
+            MenuItem urlSubmenu = new MenuItem();
+            urlSubmenu.Text = "URL";
+            trayMenu.MenuItems.Add(urlSubmenu);
+                urlSubmenu.MenuItems.Add("Change URL", OnExit);
+                urlSubmenu.MenuItems.Add("Clear Cache", OnExit);
+
+            MenuItem tempSubmenu = new MenuItem();
+            tempSubmenu.Text = "HOSTS FILE HERE";
+            trayMenu.MenuItems.Add(tempSubmenu);
+                tempSubmenu.MenuItems.Add("Open Putty", OnExit);
+                tempSubmenu.MenuItems.Add("View Community Log", OnExit);
+            
             trayMenu.MenuItems.Add("Make Spice Admin", OnExit);
             trayMenu.MenuItems.Add("View Production Log", OnExit);
-            trayMenu.MenuItems.Add("Hosts File", OnExit);
+
+            MenuItem hostFileOptionsSubmenu = new MenuItem();
+            hostFileOptionsSubmenu.Text = "Hosts File";
+            trayMenu.MenuItems.Add(hostFileOptionsSubmenu);
+                hostFileOptionsSubmenu.MenuItems.Add("Edit hosts file", OnExit);
+                hostFileOptionsSubmenu.MenuItems.Add("New hosts file", OnExit);
+                hostFileOptionsSubmenu.MenuItems.Add("Open hosts file directory", OnExit);
+
             trayMenu.MenuItems.Add("Message", OnExit);
-            trayMenu.MenuItems.Add("RELEASE DATA", OnExit);
+            trayMenu.MenuItems.Add("RELEASE DATA");
             trayMenu.MenuItems.Add("Release", OnExit);
             trayMenu.MenuItems.Add("Settings", OnExit);
             trayMenu.MenuItems.Add("Quit", OnExit);
